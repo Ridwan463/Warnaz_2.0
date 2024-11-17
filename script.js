@@ -24,7 +24,7 @@ function displayProducts(products) {
 
 // Load products on page load
 fetchProducts();
-const API_URL = "https://api.sheety.co/<your_project_id>/sheet_name"; // Replace with your API URL
+const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warznazSpreadsheet/sheet1" // Replace with your API URL
 
 async function fetchProducts() {
     const response = await fetch(API_URL);
