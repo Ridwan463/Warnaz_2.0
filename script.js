@@ -29,7 +29,7 @@ const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warznazS
 async function fetchProducts() {
     const response = await fetch(API_URL);
     const data = await response.json();
-    displayProducts(data.sheet_name); // Use the sheet name from Sheety
+    displayProducts(data.Warnazspreadsheet); // Use the sheet name from Sheety
 }
 
 function displayProducts(products) {
