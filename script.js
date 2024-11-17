@@ -1,39 +1,18 @@
-// script.js
-
-// Example: Fetch products from a JSON file or CMS (e.g., Firebase, Airtable)
+// Define the product list element
 const productList = document.getElementById('product-list');
 
+// API URL from Sheety (update with the correct project ID and sheet name)
+const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warznazSpreadsheet/sheet1"; 
+
+// Function to fetch products from the Sheety API
 async function fetchProducts() {
-    const response = await fetch('https://api.example.com/products'); // Replace with your API
-    const products = await response.json();
-    displayProducts(products);
+    const response = await fetch(API_URL);  // Fetch data from the Sheety API
+    const data = await response.json();     // Parse the JSON response
+    displayProducts(data.warnazSpreadsheet); // Use the correct sheet name (in lowercase, as per Sheety)
 }
 
+// Function to display products on the webpage
 function displayProducts(products) {
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
-        `;
-        productList.appendChild(productCard);
-    });
-}
-
-// Load products on page load
-fetchProducts();
-const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warznazSpreadsheet/sheet1" // Replace with your API URL
-
-async function fetchProducts() {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-    displayProducts(data.Warnazspreadsheet); // Use the sheet name from Sheety
-}
-
-function displayProducts(products) {
-    const productList = document.getElementById('product-list');
     productList.innerHTML = ''; // Clear previous content
 
     products.forEach(product => {
@@ -48,6 +27,5 @@ function displayProducts(products) {
     });
 }
 
-// Call fetchProducts to load data
+// Load products when the page loads
 fetchProducts();
-
