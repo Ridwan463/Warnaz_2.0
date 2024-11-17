@@ -2,7 +2,7 @@
 const productList = document.getElementById('product-list');
 
 // API URL from Sheety (update with the correct project ID and sheet name)
-const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warznazSpreadsheet/sheet1"; 
+const API_URL = "https://api.sheety.co/a3d097db8d561a3b1cabc1e52684d8fd/warnazSpreadsheet/sheet1"; 
 
 // Function to fetch products from the Sheety API
 async function fetchProducts() {
