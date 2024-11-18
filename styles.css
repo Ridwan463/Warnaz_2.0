@@ -1,35 +1,102 @@
 /* styles.css */
+
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Clean and modern font */
     margin: 0;
     padding: 0;
+    background: #f4f4f9; /* Neutral background color */
+    color: #2c3e50; /* Modern dark gray for text */
 }
 
+/* Header styling */
 header {
-    background: #333;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Warm gradient */
     color: #fff;
-    padding: 1rem;
+    padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Product list styling */
 #product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 2rem; /* Increased spacing for aesthetics */
+    padding: 3rem 1rem;
     justify-content: center;
 }
 
+/* Individual product card styling */
 .product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 200px;
-    padding: 1rem;
+    background: #ffffff; /* Clean white card */
+    border-radius: 15px;
+    width: 250px;
+    padding: 1.5rem;
     text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+    overflow: hidden;
 }
 
 .product-card img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease; /* Add a zoom effect */
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #34495e; /* Deep blue-gray */
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    color: #7f8c8d; /* Soft gray for pricing */
+    margin: 0.5rem 0;
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* Slight zoom on image */
+}
+
+/* Footer styling */
+footer {
+    background: #34495e; /* Deep blue-gray */
+    color: #ecf0f1; /* Light gray text */
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #product-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .product-card {
+        width: 90%; /* Full width for smaller screens */
+    }
 }
